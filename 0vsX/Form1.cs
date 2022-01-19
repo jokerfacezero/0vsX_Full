@@ -31,7 +31,6 @@ namespace _0vsX
                     btns[i, j].Click += button1_Click;
                 }
                 y += 106;
-
             }
             SetBut();
 
