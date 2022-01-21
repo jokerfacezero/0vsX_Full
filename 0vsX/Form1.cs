@@ -31,7 +31,6 @@ namespace _0vsX
                     btns[i, j].Click += button1_Click;
                 }
                 y += 106;
-
             }
             SetBut();
 
@@ -42,7 +41,7 @@ namespace _0vsX
             {
                 for (int j = 0; j < btns.Length / 3; j++)
                 {
-                    btns[i, j].Location = new Point(16 + 101 * j, 15 + 101 * i);
+                    btns[i, j].Location = new Point(15 + 101 * j, 15 + 101 * i);
 
                     btns[i, j].Font = new Font(FontFamily.GenericSansSerif, 50);
                     this.Controls.Add(btns[i, j]);
@@ -60,15 +59,15 @@ namespace _0vsX
                 case 1:
                     sender.GetType().GetProperty("Text").SetValue(sender, "X");
 
-                    player = 0;
-                    label1.Text = "Player 2";
+                    player = 2;
+                    label1.Text = "Player 1";
                     break;
 
-                case 0:
+                case 2:
                     sender.GetType().GetProperty("Text").SetValue(sender, "O");
 
                     player = 1;
-                    label1.Text = "Player 1";
+                    label1.Text = "Player 2";
                     break;
             }
             sender.GetType().GetProperty("Enabled").SetValue(sender, false);
@@ -137,7 +136,7 @@ namespace _0vsX
 
             public void msg()
             {
-                MessageBox.Show("WINNER");
+                MessageBox.Show($"WINNER PLAYER {player}");
                 for (int o = 0; o < 3; o++)
                 {
                     for (int p = 0; p < 3; p++)
